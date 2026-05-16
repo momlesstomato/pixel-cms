@@ -1,0 +1,91 @@
+.mantine-Drawer-root {
+  .mantine-Drawer-content {
+    border-right: 1px solid var(--mantine-color-default-border);
+    border-left: 1px solid var(--mantine-color-default-border);
+  }
+}
+
+.mantine-HoverCard-dropdown {
+  background-color: var(--mantine-color-body);
+  border-color: var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-default);
+}
+
+.mantine-Menu-dropdown {
+  background-color: var(--mantine-color-body);
+  border-color: var(--mantine-color-default-border);
+
+  .mantine-Menu-item {
+    background-color: transparent;
+
+    &:where([data-hovered]) {
+      background-color: var(--menu-item-hover, var(--mantine-color-default-hover));
+    }
+  }
+
+  .mantine-Menu-divider {
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.mantine-Modal-root {
+  .mantine-Modal-content {
+    border: 1px solid var(--mantine-color-default-border);
+    border-radius: var(--mantine-radius-default);
+  }
+}
+
+.mantine-Popover-dropdown {
+  --popover-border-color: var(--mantine-color-default-border);
+  background-color: var(--mantine-color-body);
+}
+
+.mantine-Popover-arrow {
+  --popover-border-color: var(--mantine-color-default-border);
+}
+
+.mantine-Tooltip-tooltip {
+  font-size: var(--mantine-font-size-xs);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mantine-Spotlight-root {
+  .mantine-Spotlight-content {
+    border: 1px solid var(--mantine-color-default-border);
+  }
+
+  .mantine-Spotlight-actionsList {
+    border-color: var(--mantine-color-default-border);
+  }
+
+  .mantine-Spotlight-action:where(:not([data-selected])):hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+
+  .mantine-Spotlight-footer {
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.mantine-CodeHighlightTabs-root {
+  .mantine-CodeHighlightTabs-file {
+    color: var(--mantine-color-text);
+    border-color: var(--mantine-color-default-border);
+    padding: 7px 12px;
+    font-size: 12px;
+
+    &:where([data-active]) {
+      background-color: var(--mantine-color-default-hover);
+      color: var(--mantine-color-text);
+    }
+  }
+
+  .mantine-CodeHighlightTabs-control {
+    color: var(--mantine-primary-color-contrast);
+  }
+}
+
+.mantine-ChartTooltip-tooltip {
+  border: 1px solid var(--mantine-color-default-border);
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode, ReactElement } from 'react'
 import BaseLayout from '@/layout/BaseLayout/BaseLayout'
-import './globals.css'
+import '@/styles/main.scss'
 
 /**
  * Default metadata used by the application shell.

@@ -1,0 +1,1 @@
+export { defaultCssVariableResolver } from './resolver'

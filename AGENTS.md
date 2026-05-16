@@ -8,6 +8,10 @@ All code must be documented using TSDoc style. Components, hooks, utilities, exp
 
 All code must pass the project linting rules before being considered complete. ESLint must enforce single quotes and no trailing semicolons.
 
+## Tooling
+
+Use `ripgrep` (`rg`) for text and file searches whenever it is available. It should be preferred over slower recursive search commands to keep codebase exploration and refactoring checks fast.
+
 ## Application Structure
 
 The application follows a view-based routing pattern. App Router files should stay thin and should only render the corresponding view.

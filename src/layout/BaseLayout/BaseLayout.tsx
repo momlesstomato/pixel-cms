@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-head-element -- Mantine ColorSchemeScript must render before body hydration. */
+import { ColorSchemeScript } from '@mantine/core'
 import type { AbstractIntlMessages } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
 import type { ReactElement, ReactNode } from 'react'
@@ -21,7 +23,10 @@ const BaseLayout = async ({ children }: BaseLayoutProps): Promise<ReactElement> 
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <ColorSchemeScript defaultColorScheme="auto" />
+      </head>
       <body>
         <InsideLayout locale={locale} messages={messages as AbstractIntlMessages}>
           {children}

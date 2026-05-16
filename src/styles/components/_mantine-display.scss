@@ -1,0 +1,133 @@
+.mantine-Notification-root {
+  background-color: var(--mantine-color-secondary-filled);
+
+  &:where([data-with-border]) {
+    border: 1px solid var(--mantine-color-default-border);
+  }
+}
+
+.mantine-Progress-root {
+  background-color: var(--mantine-color-default-hover);
+}
+
+.mantine-RingProgress-root {
+  .mantine-RingProgress-curve {
+    --rp-curve-root-color: var(--mantine-color-default-hover);
+  }
+}
+
+.mantine-SemiCircleProgress-root {
+  --scp-empty-segment-color: var(--mantine-color-default-hover);
+}
+
+.mantine-Skeleton-root {
+  &:where([data-visible])::after {
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+.mantine-Accordion-root {
+  .mantine-Accordion-control {
+    color: var(--mantine-color-text);
+  }
+
+  .mantine-Accordion-item {
+    --item-border-color: var(--mantine-color-default-border);
+    --item-filled-color: var(--mantine-color-default-hover);
+  }
+
+  &[data-variant='default'] {
+    .mantine-Accordion-control:where(:not(:disabled, [data-disabled])):hover {
+      background-color: transparent;
+    }
+
+    .mantine-Accordion-label:where(:not(:disabled, [data-disabled])):hover {
+      text-decoration: underline;
+    }
+  }
+
+  &[data-variant='contained'],
+  &[data-variant='filled'] {
+    .mantine-Accordion-control:where(:not(:disabled, [data-disabled])):hover {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.mantine-Avatar-root {
+  --avatar-bg: var(--mantine-primary-color-light);
+  --avatar-bd: 1px solid transparent;
+  --avatar-color: var(--mantine-primary-color-light-color);
+}
+
+.mantine-Badge-root {
+  --badge-color: var(--mantine-primary-color-contrast);
+
+  &[data-variant='dot'] {
+    background-color: var(--mantine-color-secondary-light);
+    border-color: var(--mantine-color-secondary-light);
+    color: var(--mantine-color-text);
+  }
+}
+
+.mantine-Card-root {
+  background-color: var(--mantine-color-default);
+
+  .mantine-Card-section {
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.mantine-Timeline-root {
+  --item-border-color: var(--mantine-color-default-border);
+
+  .mantine-Timeline-itemBullet {
+    border-color: var(--mantine-color-default-border);
+
+    &:where([data-with-child]) {
+      background-color: var(--mantine-color-secondary-light);
+    }
+
+    &:where([data-active]) {
+      border-color: var(--tli-color, var(--tl-color));
+      background-color: var(--mantine-color-white);
+      color: var(--tl-icon-color, var(--mantine-color-white));
+
+      &:where([data-with-child]) {
+        background-color: var(--tli-color, var(--tl-color));
+        color: var(--tl-icon-color, var(--mantine-color-white));
+      }
+    }
+  }
+}
+
+.mantine-Code-root {
+  background-color: var(--code-bg, var(--mantine-color-secondary-filled));
+  color: var(--mantine-color-text);
+}
+
+.mantine-Table-table {
+  --table-hover-color: var(--mantine-color-default-hover);
+  --table-striped-color: var(--mantine-color-default-hover);
+  --table-border-color: var(--mantine-color-default-border);
+
+  &:where([data-with-table-border]) {
+    border: 1px solid var(--table-border-color);
+  }
+}
+
+.mantine-Title-root,
+.mantine-Modal-title,
+.mantine-Drawer-title {
+  letter-spacing: -0.025em;
+}
+
+.mantine-Divider-root {
+  --divider-color: var(--mantine-color-default-border);
+}
+
+.mantine-Paper-root {
+  &:where([data-with-border]) {
+    border: 1px solid var(--mantine-color-default-border);
+  }
+}

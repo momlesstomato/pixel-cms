@@ -1,8 +1,10 @@
 'use client'
 
+import { MantineProvider } from '@mantine/core'
 import type { AbstractIntlMessages } from 'next-intl'
 import { NextIntlClientProvider } from 'next-intl'
 import type { ReactElement, ReactNode } from 'react'
+import { defaultCssVariableResolver, defaultTheme } from '@/theme/default'
 
 /**
  * Props accepted by client-capable layout providers.
@@ -27,9 +29,15 @@ type InsideLayoutProps = Readonly<{
  */
 const InsideLayout = ({ children, locale, messages }: InsideLayoutProps): ReactElement => {
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <MantineProvider
+      cssVariablesResolver={defaultCssVariableResolver}
+      defaultColorScheme="auto"
+      theme={defaultTheme}
+    >
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        {children}
+      </NextIntlClientProvider>
+    </MantineProvider>
   )
 }
 
