@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-head-element -- Mantine ColorSchemeScript must render before body hydration. */
 import { ColorSchemeScript } from '@mantine/core'
+import { GeistSans } from 'geist/font/sans'
 import type { AbstractIntlMessages } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
 import type { ReactElement, ReactNode } from 'react'
@@ -27,7 +28,7 @@ const BaseLayout = async ({ children }: BaseLayoutProps): Promise<ReactElement> 
       <head>
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>
-      <body>
+      <body className={`${GeistSans.variable} ${GeistSans.className}`}>
         <InsideLayout locale={locale} messages={messages as AbstractIntlMessages}>
           {children}
         </InsideLayout>

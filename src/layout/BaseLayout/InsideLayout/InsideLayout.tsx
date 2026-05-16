@@ -4,6 +4,8 @@ import { MantineProvider } from '@mantine/core'
 import type { AbstractIntlMessages } from 'next-intl'
 import { NextIntlClientProvider } from 'next-intl'
 import type { ReactElement, ReactNode } from 'react'
+import Header from '@/components/Header/Header'
+import { DEFAULT_TIME_ZONE } from '@/i18n/config'
 import { defaultCssVariableResolver, defaultTheme } from '@/theme/default'
 
 /**
@@ -34,7 +36,8 @@ const InsideLayout = ({ children, locale, messages }: InsideLayoutProps): ReactE
       defaultColorScheme="auto"
       theme={defaultTheme}
     >
-      <NextIntlClientProvider locale={locale} messages={messages}>
+      <NextIntlClientProvider locale={locale} messages={messages} timeZone={DEFAULT_TIME_ZONE}>
+        <Header />
         {children}
       </NextIntlClientProvider>
     </MantineProvider>

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it } from 'vitest'
+import { DEFAULT_TIME_ZONE } from '@/i18n/config'
 import messages from '@/messages/es.json'
 import Home from './Home'
 
@@ -9,7 +10,7 @@ import Home from './Home'
  */
 const renderHome = () => {
   return render(
-    <NextIntlClientProvider locale="es" messages={messages}>
+    <NextIntlClientProvider locale="es" messages={messages} timeZone={DEFAULT_TIME_ZONE}>
       <Home />
     </NextIntlClientProvider>,
   )

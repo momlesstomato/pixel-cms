@@ -8,5 +8,79 @@
       "members": "Miembros"
     },
     "emptyState": "Todavía no hay actividad registrada."
+  },
+  "Navigation": {
+    "aria": {
+      "primary": "Navegación principal"
+    },
+    "brand": {
+      "label": "Pixel CMS"
+    },
+    "mobile": {
+      "title": "Navegación",
+      "openMenu": "Abrir menú",
+      "closeMenu": "Cerrar menú"
+    },
+    "items": {
+      "home": {
+        "label": "Inicio"
+      },
+      "features": {
+        "label": "Funciones",
+        "menu": {
+          "top": {
+            "title": "Funciones del CMS",
+            "description": "Herramientas para crear, organizar y revisar el contenido del hotel."
+          },
+          "links": {
+            "pages": {
+              "label": "Páginas",
+              "description": "Crea páginas de campaña y contenido editorial."
+            },
+            "rooms": {
+              "label": "Salas",
+              "description": "Administra espacios, etiquetas y estados públicos."
+            },
+            "analytics": {
+              "label": "Analíticas",
+              "description": "Revisa actividad, visitas y señales de contenido."
+            },
+            "members": {
+              "label": "Miembros",
+              "description": "Gestiona perfiles, permisos y actividad del equipo."
+            },
+            "security": {
+              "label": "Seguridad",
+              "description": "Controla accesos, sesiones y revisiones sensibles."
+            },
+            "notifications": {
+              "label": "Notificaciones",
+              "description": "Configura avisos para publicaciones y cambios."
+            }
+          },
+          "bottom": {
+            "title": "Empieza con una base ordenada",
+            "description": "Publica el primer módulo cuando la estructura esté lista.",
+            "action": {
+              "label": "Comenzar"
+            }
+          }
+        }
+      },
+      "learn": {
+        "label": "Guías"
+      },
+      "community": {
+        "label": "Comunidad"
+      }
+    },
+    "actions": {
+      "login": {
+        "label": "Entrar"
+      },
+      "start": {
+        "label": "Comenzar"
+      }
+    }
   }
 }

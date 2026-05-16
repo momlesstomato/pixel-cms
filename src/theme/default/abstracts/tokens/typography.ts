@@ -29,7 +29,7 @@ export const lineHeightTokens = {
  * Heading sizes and weights used by Mantine Title.
  */
 export const headingTokens = {
-  fontFamily: 'Geist',
+  fontFamily: 'var(--font-geist-sans)',
   sizes: {
     h1: {
       fontSize: rem('36px'),

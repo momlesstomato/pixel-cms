@@ -4,6 +4,13 @@ import { describe, expect, it, vi } from 'vitest'
 import messages from '@/messages/es.json'
 import BaseLayout from './BaseLayout'
 
+vi.mock('geist/font/sans', () => ({
+  GeistSans: {
+    className: 'geist-sans',
+    variable: 'geist-sans-variable',
+  },
+}))
+
 vi.mock('next-intl/server', () => ({
   getLocale: vi.fn(async () => 'es'),
   getMessages: vi.fn(async () => messages),

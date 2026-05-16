@@ -27,6 +27,8 @@ Route files should not contain feature implementation details. The view owns pag
 
 Application-wide layout concerns must live under `src/layout`. `BaseLayout` owns server-rendered layout structure and non-client providers. `InsideLayout` owns client-capable providers and contexts that require or may require the `'use client'` boundary.
 
+Shared configuration must live under `src/config` as typed TypeScript modules. Configuration shapes must live under `src/types`, with reusable exported types that document the structure expected by the config module.
+
 ## Internationalization
 
 The project uses `next-intl` for translations. Spanish is the base language, so all base translation files and default message keys must be authored in Spanish first.
@@ -39,6 +41,14 @@ Use the smart/dumb component pattern:
 
 - Smart components coordinate state, data loading, side effects, and feature behavior.
 - Dumb components receive typed props and render predictable UI with minimal logic.
+
+When a component has multiple render responsibilities, keep the smart wrapper at the component root and move dumb render pieces into a colocated `partial/` folder. Use focused partial folders for each render unit, for example:
+
+```text
+components/Header/Header.tsx
+components/Header/partial/MegaMenu/MegaMenu.tsx
+components/Header/partial/MegaMenuHeader/MegaMenuHeader.tsx
+```
 
 Components, hooks, and folders must use CamelCase-style names for React units, matching this structure:
 

@@ -33,7 +33,7 @@ export const defaultTheme: MantineThemeOverride = createTheme({
   },
   autoContrast: true,
   luminanceThreshold: 0.3,
-  fontFamily: 'Geist',
+  fontFamily: 'var(--font-geist-sans)',
   radius: radiusTokens,
   defaultRadius: 'sm',
   spacing: spacingTokens,
