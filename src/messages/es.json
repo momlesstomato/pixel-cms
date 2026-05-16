@@ -62,7 +62,7 @@
             "title": "Empieza con una base ordenada",
             "description": "Publica el primer módulo cuando la estructura esté lista.",
             "action": {
-              "label": "Comenzar"
+              "label": "Regístrate"
             }
           }
         }
@@ -76,10 +76,10 @@
     },
     "actions": {
       "login": {
-        "label": "Entrar"
+        "label": "Inicia sesión"
       },
       "start": {
-        "label": "Comenzar"
+        "label": "Regístrate"
       }
     }
   }

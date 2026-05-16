@@ -4,6 +4,7 @@ import type { useTranslations } from 'next-intl'
 import type { ReactElement } from 'react'
 import type { NavigationLinkConfig } from '@/types/navigation'
 import styles from '../../Header.module.css'
+import actionStyles from './HeaderActions.module.css'
 
 /**
  * Props accepted by HeaderActions.
@@ -27,14 +28,13 @@ const HeaderActions = ({ actions, t }: HeaderActionsProps): ReactElement => {
     <Group className={styles.desktopActions}>
       {actions.map((action, index) => (
         <Button
-          className={styles.headerAction}
+          className={actionStyles.headerAction}
           component={Link}
-          h={38}
+          data-tone={index === 0 ? 'secondary' : 'primary'}
           href={action.href}
           key={action.translationPath}
-          miw={96}
           size="sm"
-          variant={index === 0 ? 'default' : 'filled'}
+          variant="default"
         >
           {t(`${action.translationPath}.label`)}
         </Button>

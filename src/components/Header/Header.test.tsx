@@ -34,7 +34,7 @@ describe('Header', () => {
     expect(screen.getByRole('link', { name: /Pixel CMS/i })).toHaveAttribute('href', '/')
     expect(screen.getByRole('link', { name: 'Inicio' })).toHaveAttribute('href', '/')
     expect(screen.getByRole('button', { name: /Funciones/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Entrar' })).toHaveAttribute('href', '/login')
+    expect(screen.getByRole('link', { name: 'Inicia sesión' })).toHaveAttribute('href', '/login')
   })
 
   it('opens the mobile drawer with configured mega-menu links', async () => {
@@ -48,6 +48,6 @@ describe('Header', () => {
     fireEvent.click(within(dialog).getByRole('button', { name: 'Funciones' }))
 
     expect(within(dialog).getByRole('link', { name: /Analíticas/i })).toHaveAttribute('href', '/analytics')
-    expect(within(dialog).getByRole('link', { name: 'Comenzar' })).toHaveAttribute('href', '/getting-started')
+    expect(within(dialog).getByRole('link', { name: 'Regístrate' })).toHaveAttribute('href', '/getting-started')
   })
 })

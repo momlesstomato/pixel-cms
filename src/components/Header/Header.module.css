@@ -86,11 +86,6 @@
   gap: var(--mantine-spacing-sm);
 }
 
-.headerAction {
-  min-width: 96px;
-  height: 38px;
-}
-
 .dropdown {
   width: min(660px, calc(100vw - 32px));
   overflow: hidden;
