@@ -27,9 +27,13 @@ const HeaderActions = ({ actions, t }: HeaderActionsProps): ReactElement => {
     <Group className={styles.desktopActions}>
       {actions.map((action, index) => (
         <Button
+          className={styles.headerAction}
           component={Link}
+          h={38}
           href={action.href}
           key={action.translationPath}
+          miw={96}
+          size="sm"
           variant={index === 0 ? 'default' : 'filled'}
         >
           {t(`${action.translationPath}.label`)}

@@ -1,14 +1,20 @@
-import { Box, Button, Drawer, Stack, Text } from '@mantine/core'
+import { Button, Drawer, Stack } from '@mantine/core'
 import Link from 'next/link'
 import type { useTranslations } from 'next-intl'
 import type { ReactElement } from 'react'
 import type { NavigationItemConfig, NavigationLinkConfig } from '@/types/navigation'
 import styles from '../../Header.module.css'
+import MobileMenuHeader from '../MobileMenuHeader/MobileMenuHeader'
+import MobileMegaMenu from '../MobileMegaMenu/MobileMegaMenu'
 
 /**
  * Props accepted by MobileMenu.
  */
 type MobileMenuProps = Readonly<{
+  /**
+   * Product brand link displayed in the drawer header.
+   */
+  brand: NavigationLinkConfig
   /**
    * Main navigation items.
    */
@@ -34,52 +40,46 @@ type MobileMenuProps = Readonly<{
 /**
  * Renders the mobile navigation drawer.
  */
-const MobileMenu = ({ actions, items, onClose, opened, t }: MobileMenuProps): ReactElement => {
+const MobileMenu = ({ actions, brand, items, onClose, opened, t }: MobileMenuProps): ReactElement => {
   return (
     <Drawer
+      aria-label={t('mobile.title')}
+      classNames={{ body: styles.mobileDrawerBody }}
       opened={opened}
       onClose={onClose}
       padding="md"
       position="right"
       size="min(420px, 100vw)"
-      title={t('mobile.title')}
+      withCloseButton={false}
     >
+      <MobileMenuHeader brand={brand} onClose={onClose} t={t} />
       <Stack className={styles.mobileNav}>
-        {items.map((item) => {
-          if (item.type === 'megaMenu') {
-            return (
-              <Box className={styles.mobilePanel} key={item.translationPath}>
-                <Text fw={800}>{t(`${item.translationPath}.label`)}</Text>
-                <Text c="dimmed" mb="sm" size="sm">{t(`${item.menu.top.translationPath}.description`)}</Text>
-                <Stack gap="xs">
-                  {item.menu.links.map((link) => (
-                    <Link className={styles.mobileLink} href={link.href} key={link.translationPath} onClick={onClose}>
-                      {t(`${link.translationPath}.label`)}
-                    </Link>
-                  ))}
-                </Stack>
-              </Box>
+        {items.map((item) => (
+          item.type === 'megaMenu'
+            ? <MobileMegaMenu item={item} key={item.translationPath} onClose={onClose} t={t} />
+            : (
+              <Link className={styles.mobileLink} href={item.href} key={item.translationPath} onClick={onClose}>
+                <span>{t(`${item.translationPath}.label`)}</span>
+              </Link>
             )
-          }
-
-          return (
-            <Link className={styles.mobileLink} href={item.href} key={item.translationPath} onClick={onClose}>
-              {t(`${item.translationPath}.label`)}
-            </Link>
-          )
-        })}
-        {actions.map((action, index) => (
-          <Button
-            component={Link}
-            fullWidth
-            href={action.href}
-            key={action.translationPath}
-            onClick={onClose}
-            variant={index === 0 ? 'default' : 'filled'}
-          >
-            {t(`${action.translationPath}.label`)}
-          </Button>
         ))}
+        <Stack className={styles.mobileActions}>
+          {actions.map((action, index) => (
+            <Button
+              className={styles.mobileAction}
+              component={Link}
+              fullWidth
+              h={38}
+              href={action.href}
+              key={action.translationPath}
+              onClick={onClose}
+              size="sm"
+              variant={index === 0 ? 'default' : 'filled'}
+            >
+              {t(`${action.translationPath}.label`)}
+            </Button>
+          ))}
+        </Stack>
       </Stack>
     </Drawer>
   )

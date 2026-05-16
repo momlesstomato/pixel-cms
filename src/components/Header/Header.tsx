@@ -33,6 +33,7 @@ const Header = (): ReactElement => {
       </Container>
       <MobileMenu
         actions={headerNavigationConfig.actions}
+        brand={headerNavigationConfig.brand}
         items={headerNavigationConfig.items}
         onClose={close}
         opened={opened}

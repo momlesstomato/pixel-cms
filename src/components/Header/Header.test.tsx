@@ -1,5 +1,5 @@
 import { MantineProvider } from '@mantine/core'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it } from 'vitest'
 import { DEFAULT_TIME_ZONE } from '@/i18n/config'
@@ -42,8 +42,12 @@ describe('Header', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Abrir menú' }))
 
-    expect(await screen.findByText('Navegación')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Analíticas' })).toHaveAttribute('href', '/analytics')
-    expect(screen.getAllByRole('link', { name: 'Comenzar' })[0]).toHaveAttribute('href', '/getting-started')
+    const dialog = await screen.findByRole('dialog')
+    expect(within(dialog).getByRole('link', { name: /Pixel CMS/i })).toHaveAttribute('href', '/')
+
+    fireEvent.click(within(dialog).getByRole('button', { name: 'Funciones' }))
+
+    expect(within(dialog).getByRole('link', { name: /Analíticas/i })).toHaveAttribute('href', '/analytics')
+    expect(within(dialog).getByRole('link', { name: 'Comenzar' })).toHaveAttribute('href', '/getting-started')
   })
 })
