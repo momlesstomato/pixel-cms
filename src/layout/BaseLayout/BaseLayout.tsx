@@ -24,11 +24,11 @@ const BaseLayout = async ({ children }: BaseLayoutProps): Promise<ReactElement> 
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html className={`${GeistSans.variable} ${GeistSans.className}`} lang={locale} suppressHydrationWarning>
       <head>
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>
-      <body className={`${GeistSans.variable} ${GeistSans.className}`}>
+      <body>
         <InsideLayout locale={locale} messages={messages as AbstractIntlMessages}>
           {children}
         </InsideLayout>
