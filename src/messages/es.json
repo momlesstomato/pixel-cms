@@ -1,0 +1,12 @@
+{
+  "Home": {
+    "kicker": "Panel",
+    "title": "Pixel CMS",
+    "metrics": {
+      "pages": "Páginas",
+      "rooms": "Salas",
+      "members": "Miembros"
+    },
+    "emptyState": "Todavía no hay actividad registrada."
+  }
+}

@@ -21,6 +21,12 @@ views/Example/Example.tsx
 
 Route files should not contain feature implementation details. The view owns page composition, data orchestration, and configuration of reusable UI pieces.
 
+Application-wide layout concerns must live under `src/layout`. `BaseLayout` owns server-rendered layout structure and non-client providers. `InsideLayout` owns client-capable providers and contexts that require or may require the `'use client'` boundary.
+
+## Internationalization
+
+The project uses `next-intl` for translations. Spanish is the base language, so all base translation files and default message keys must be authored in Spanish first.
+
 ## Components And Hooks
 
 Components and hooks must stay focused and reasonably small. Files must not exceed 300 lines. If a file grows beyond that limit, split it into smaller components, hooks, utilities, or configuration modules.

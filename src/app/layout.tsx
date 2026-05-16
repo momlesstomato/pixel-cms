@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode, ReactElement } from 'react'
+import BaseLayout from '@/layout/BaseLayout/BaseLayout'
 import './globals.css'
 
 /**
@@ -24,11 +25,7 @@ type RootLayoutProps = Readonly<{
  * Renders the root document shell for every application route.
  */
 const RootLayout = ({ children }: RootLayoutProps): ReactElement => {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+  return <BaseLayout>{children}</BaseLayout>
 }
 
 export default RootLayout
